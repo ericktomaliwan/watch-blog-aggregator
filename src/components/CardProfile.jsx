@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export function Card(){
     return <section class="card">
         <h3>First Name</h3>
