@@ -1,4 +1,4 @@
-import { Card } from "./components/Card";
+import { Card } from "./components/CardProfile";
 
 export default function App(){
     return (
