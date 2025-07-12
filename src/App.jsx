@@ -1,5 +1,15 @@
 //import { Card } from "./components/CardProfile";
 
+export const metadata = {
+    title: {
+      template: '%s - Catalyst',
+      default: 'Catalyst',
+    },
+    description: '',
+  }
+
+  
+
 export default function App(){
     return (
         <div>
@@ -7,3 +17,4 @@ export default function App(){
         </div>
     );
 }
+
