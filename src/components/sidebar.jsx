@@ -3,7 +3,8 @@ import * as Headless from '@headlessui/react'
 import clsx from 'clsx'
 import { LayoutGroup, motion } from 'framer-motion'
 import { forwardRef, useId } from 'react'
-import { TouchTarget } from './button'
+import { Link } from 'react-router-dom'
+import { TouchTarget } from './buttons'
 
 export function Sidebar({ className, ...props }) {
     return <nav {...props} className={clsx(className, 'flex h-full min-h-0 flex-col')} />
@@ -104,26 +105,26 @@ export function SidebarBody({ className, ...props }) {
             className="absolute inset-y-2 -left-4 w-0.5 rounded-full bg-zinc-950 dark:bg-white"
           />
         )}
-        {'href' in props ? (
-          <Headless.CloseButton
-            as={Link}
-            {...props}
-            className={classes}
-            data-current={current ? 'true' : undefined}
-            ref={ref}
-          >
-            <TouchTarget>{children}</TouchTarget>
-          </Headless.CloseButton>
-        ) : (
-          <Headless.Button
-            {...props}
-            className={clsx('cursor-default', classes)}
-            data-current={current ? 'true' : undefined}
-            ref={ref}
-          >
-            <TouchTarget>{children}</TouchTarget>
-          </Headless.Button>
-        )}
+      {'href' in props ? (
+        <Link
+          {...props}
+          to={props.href} // Convert href to the 'to' prop that React Router expects
+          className={classes}
+          data-current={current ? 'true' : undefined}
+          ref={ref}
+        >
+          <TouchTarget>{children}</TouchTarget>
+        </Link>
+      ) : (
+        <Headless.Button
+          {...props}
+          className={clsx('cursor-default', classes)}
+          data-current={current ? 'true' : undefined}
+          ref={ref}
+        >
+          <TouchTarget>{children}</TouchTarget>
+        </Headless.Button>
+      )}
       </span>
     )
   })
