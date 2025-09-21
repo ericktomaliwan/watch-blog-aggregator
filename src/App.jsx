@@ -1,6 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import About from './pages/About'
+import AppRouter from './router'
 
 export const metadata = {
     title: {
@@ -10,17 +8,8 @@ export const metadata = {
     description: '',
   }
   
-
+/* Move old routes to new router */
 export default function App() {
-  return (
-    <div>
-      {/* You can add your navigation component here */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        {/* Add more routes as needed */}
-      </Routes>
-    </div>
-  )
+  return <AppRouter />
 }
 
