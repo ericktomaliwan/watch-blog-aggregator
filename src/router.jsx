@@ -4,7 +4,7 @@ import AppLayout from './app/(app)/layout';
 import HomePage from './app/(app)/page';
 import AboutPage from './pages/About';
 import SettingsLayout from './app/(app)/settings/application-layout';
-import EventPage from './app/(app)/events/[id]/page';
+import ListPage from './app/(app)/list/[id]/page';
 import SettingsPage from './app/(app)/settings/page';
 import AddressSettings from './app/(app)/settings/address';
 
@@ -26,8 +26,8 @@ const router = createBrowserRouter([
             element: <AboutPage />,
           },
           {
-            path: 'events/:id',
-            element: <EventPage />,
+            path: 'list/:id',
+            element: <ListPage />,
           },
           {
             path: 'settings',

@@ -18,6 +18,7 @@
     "react-dom": "^19.1.0",
     "react-router": "^7.6.3",
     "react-router-dom": "^7.6.3",
+    "rss-parser": "^3.13.0",
     "simple-functional-loader": "^1.2.1",
     "zustand": "^5.0.6"
   },

@@ -24,8 +24,8 @@ export default function AppLayout() {
               <SidebarItem href="/about" current={pathname.startsWith('/about')}>
                 <SidebarLabel>About</SidebarLabel>
               </SidebarItem>
-              <SidebarItem href="/events/1" current={pathname.startsWith('/events')}>
-                <SidebarLabel>Events</SidebarLabel>
+              <SidebarItem href="/list/1" current={pathname.startsWith('/list')}>
+                <SidebarLabel>List</SidebarLabel>
               </SidebarItem>
               <SidebarItem href="/settings" current={pathname.startsWith('/settings')}>
                 <SidebarLabel>Settings</SidebarLabel>
