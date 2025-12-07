@@ -1,4 +1,5 @@
 import { Subheading } from 'components/heading';
+import { decodeHtmlEntities } from '../utils/htmlEntities';
 
 export function RSSFeedItem({ item }) {
   const formatDate = (dateString) => {
@@ -30,7 +31,7 @@ export function RSSFeedItem({ item }) {
       <div className="space-y-3">
         <div>
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-            {item.title}
+            {decodeHtmlEntities(item.title)}
           </h3>
           <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 space-x-2">
             {item.pubDate && (
@@ -54,7 +55,7 @@ export function RSSFeedItem({ item }) {
         
         {item.description && (
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-            {truncateText(stripHtml(item.description))}
+            {decodeHtmlEntities(truncateText(stripHtml(item.description)))}
           </p>
         )}
       </div>
