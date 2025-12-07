@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { decodeHtmlEntities } from '../utils/htmlEntities';
 
 const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
 
@@ -83,7 +82,14 @@ function extractCDATA(xml, tagName) {
   }
   
   // Decode HTML entities
-  content = decodeHtmlEntities(content).trim();
+  content = content
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&nbsp;/g, ' ')
+    .trim();
   
   return content || null;
 }
