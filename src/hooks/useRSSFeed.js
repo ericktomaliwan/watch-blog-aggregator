@@ -84,6 +84,7 @@ function extractCDATA(xml, tagName) {
   
   // Decode HTML entities
   content = decodeHtmlEntities(content).trim();
+
   
   return content || null;
 }
